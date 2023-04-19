@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constants/gaps.dart';
-import 'screens/sign_up/sign_up_screen.dart';
+import 'features/authentication/sign_up_screen.dart';
 
 void main() {
   runApp(const FlutterPracticeApp());
