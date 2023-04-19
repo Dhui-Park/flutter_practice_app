@@ -19,7 +19,7 @@ class FlutterPracticeApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           centerTitle: true,
           foregroundColor: Colors.black,
-          backgroundColor: Color(0xFFCFB997),
+          backgroundColor: Colors.white,
           elevation: 0,
           titleTextStyle: TextStyle(
             color: Colors.black,
@@ -27,7 +27,7 @@ class FlutterPracticeApp extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        scaffoldBackgroundColor: const Color(0xFFCFB997),
+        scaffoldBackgroundColor: Colors.white,
         primaryColor: const Color(0xFFCFB997),
       ),
       home: const SignUpScreen(),
