@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'constants/gaps.dart';
+import 'screens/sign_up/sign_up_screen.dart';
 
 void main() {
   runApp(const FlutterPracticeApp());
@@ -12,19 +13,12 @@ class FlutterPracticeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'FLutter Practice',
       theme: ThemeData(
         primaryColor: const Color(0xFFCFB997),
       ),
-      home: Container(
-        child: Row(
-          children: const [
-            Text("Hello"),
-            Gaps.h20,
-            Text("hello"),
-          ],
-        ),
-      ),
+      home: const SignUpScreen(),
     );
   }
 }
