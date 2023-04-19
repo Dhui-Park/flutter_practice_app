@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'constants/gaps.dart';
+
 void main() {
   runApp(const FlutterPracticeApp());
 }
@@ -12,9 +14,17 @@ class FlutterPracticeApp extends StatelessWidget {
     return MaterialApp(
       title: 'FLutter Practice',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: const Color(0xFFCFB997),
       ),
-      home: Container(),
+      home: Container(
+        child: Row(
+          children: const [
+            Text("Hello"),
+            Gaps.h20,
+            Text("hello"),
+          ],
+        ),
+      ),
     );
   }
 }
