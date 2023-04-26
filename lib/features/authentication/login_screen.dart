@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/features/authentication/login_form_screen.dart';
 import 'package:flutter_practice/features/authentication/widgets/auth_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -10,6 +11,14 @@ class LoginScreen extends StatelessWidget {
 
   void _onSignUpTap(BuildContext context) {
     Navigator.of(context).pop();
+  }
+
+  void _onEmailLoginTap(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const LoginFormScreen(),
+      ),
+    );
   }
 
   @override
@@ -41,7 +50,7 @@ class LoginScreen extends StatelessWidget {
               ),
               Gaps.v40,
               AuthButton(
-                onTap: (p0) {},
+                onTap: _onEmailLoginTap,
                 icon: const FaIcon(FontAwesomeIcons.user),
                 text: "Use email & password",
               ),
