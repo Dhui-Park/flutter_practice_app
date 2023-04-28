@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'constants/sizes.dart';
-import 'features/authentication/login_screen.dart';
+import 'features/onboarding/interests_screen.dart';
 
 void main() {
   runApp(const FlutterPracticeApp());
@@ -30,7 +30,7 @@ class FlutterPracticeApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         primaryColor: const Color(0xFFCFB997),
       ),
-      home: const LoginScreen(),
+      home: const InterestsScreen(),
     );
   }
 }

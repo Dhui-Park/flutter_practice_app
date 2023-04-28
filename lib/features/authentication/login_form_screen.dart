@@ -3,6 +3,8 @@ import 'package:flutter_practice/constants/gaps.dart';
 import 'package:flutter_practice/constants/sizes.dart';
 import 'package:flutter_practice/features/authentication/widgets/form_button.dart';
 
+import '../onboarding/interests_screen.dart';
+
 class LoginFormScreen extends StatefulWidget {
   const LoginFormScreen({super.key});
 
@@ -19,7 +21,11 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
     if (_formKey.currentState != null) {
       if (_formKey.currentState!.validate()) {
         _formKey.currentState!.save();
-        print(formData);
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const InterestsScreen(),
+          ),
+        );
       }
     }
   }
@@ -40,10 +46,18 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
             children: [
               Gaps.v28,
               TextFormField(
-                decoration: const InputDecoration(
+                cursorColor: Theme.of(context).primaryColor,
+                decoration: InputDecoration(
                   hintText: 'Email',
+                  focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                    color: Theme.of(context).primaryColor,
+                  )),
                 ),
                 validator: (value) {
+                  if (value != null && value.isEmpty) {
+                    return 'Please write your email';
+                  }
                   return null;
                 },
                 onSaved: (newValue) {
@@ -54,8 +68,15 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
               ),
               Gaps.v16,
               TextFormField(
-                decoration: const InputDecoration(
+                obscureText: true,
+                cursorColor: Theme.of(context).primaryColor,
+                decoration: InputDecoration(
                   hintText: 'Password',
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
                 ),
                 validator: (value) {
                   return null;
